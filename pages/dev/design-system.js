@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import ButtonLink from '../../components/ButtonLink';
+import NumberedTitle from '../../components/NumberedTitle';
 
 function DesignSystem() {
   return (
@@ -8,15 +10,13 @@ function DesignSystem() {
       </Head>
 
       <main className="flex">
-        <div className="flex-grow bg-indigo-900 p-10 text-white">
+        <div className="flex-grow bg-indigo-900 px-24 py-10 text-white">
           <h1 className="font-condensed text-xl text-indigo-100 text-right tracking-widest">
             Design System
           </h1>
 
           <section id="colors" className="mt-10">
-            <h2 className="font-condensed text-xl uppercase tracking-widest">
-              <span className="mr-2 font-bold opacity-25">01</span> Colors
-            </h2>
+            <NumberedTitle number={'01'} title={'colors'} />
             <div className="flex mt-5">
               <div className="flex-grow ">
                 <div className="p-4 pt-10 bg-indigo-900 border border-indigo-200 border-solid">
@@ -73,9 +73,7 @@ function DesignSystem() {
           </section>
 
           <section id="typography" className="mt-10">
-            <h2 className="font-condensed text-xl uppercase tracking-widest">
-              <span className="mr-2 font-bold opacity-25">02</span> Typography
-            </h2>
+            <NumberedTitle number={'02'} title={'typography'} />
             <div className="flex mt-5">
               <div>
                 <p className="text-indigo-100 mt-4">
@@ -137,6 +135,22 @@ function DesignSystem() {
                   nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis
                   vel, nisi.
                 </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="interactive-elements" className="mt-10">
+            <NumberedTitle number={'03'} title={'interactive elements'} />
+            <div className="mt-5">
+              <div>Navigation Component</div>
+              <div className="flex mt-24">
+                <div className="flex flex-col items-center">
+                  <ButtonLink href="#" text={'explore'} />
+                  <p className="text-indigo-100 text-center mt-24">
+                    Landing Page Main Button
+                  </p>
+                </div>
+                <div></div>
               </div>
             </div>
           </section>

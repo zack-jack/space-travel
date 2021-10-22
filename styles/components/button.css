@@ -1,0 +1,21 @@
+.c-btn {
+  @apply relative flex items-center justify-center px-10 bg-white rounded-full z-10;
+  aspect-ratio: 1;
+  width: 274px;
+}
+
+.c-btn::after {
+  @apply absolute inset-0 bg-white rounded-full opacity-0;
+  content: '';
+  z-index: -1;
+  transition: opacity 300ms linear, transform 500ms ease-in-out;
+}
+
+.c-btn:hover::after,
+.c-btn:focus::after {
+  @apply opacity-10 transform scale-150;
+}
+
+.c-btn__link {
+  @apply font-serif text-xl text-indigo-900 uppercase leading-none tracking-wide;
+}
