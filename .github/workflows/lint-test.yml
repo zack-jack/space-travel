@@ -33,7 +33,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ./node_modules
-          key: Dependencies-${{ hashFiles('**/yarn.lock') }}
+          key: Dependencies-${{ hashFiles('**/package-lock.json') }}
 
       # Remove node_modules
       - name: Remove Residual Dependencies
@@ -41,12 +41,12 @@ jobs:
 
       # Install Dependencies
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: npm ci
 
       # Lint
       - name: Lint All Files
-        run: yarn lint
+        run: npm run lint
 
       # Test
       - name: Run All Tests
-        run: yarn test:unit
+        run: npm run test:unit
