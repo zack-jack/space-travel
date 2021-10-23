@@ -10,6 +10,7 @@
   @apply block w-full bg-white opacity-0;
   content: '';
   height: 3px;
+  transition: all 200ms ease-in-out;
 }
 
 .c-tab:not(:first-child) {
