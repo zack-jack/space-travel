@@ -3,6 +3,7 @@ import ButtonLink from '../../components/ButtonLink';
 import Navbar from '../../components/Navbar';
 import NavbarLink from '../../components/NavbarLink';
 import NumberedTitle from '../../components/NumberedTitle';
+import Tabs from '../../components/Tabs';
 
 function DesignSystem() {
   return (
@@ -76,8 +77,8 @@ function DesignSystem() {
 
           <section id="typography" className="mt-10">
             <NumberedTitle number={2} title={'typography'} />
-            <div className="flex mt-5">
-              <div>
+            <div className="flex justify-between mt-5">
+              <div className="flex flex-col">
                 <p className="text-indigo-100 mt-4">
                   Heading 1 - Bellefair Regular - 150px
                 </p>
@@ -100,7 +101,7 @@ function DesignSystem() {
                 </p>
                 <h5 className="mt-3">SO, YOU WANT TO TRAVEL TO SPACE</h5>
               </div>
-              <div className="ml-40">
+              <div className="flex flex-col w-6/12">
                 <p className="text-indigo-100 mt-4">
                   Subheading 1 - Bellefair Regular - 28px
                 </p>
@@ -120,7 +121,7 @@ function DesignSystem() {
                   Europa
                 </p>
                 <p className="text-indigo-100 mt-4">Body Text</p>
-                <p className="w-8/12 mt-3">
+                <p className="mt-3">
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                   Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In
                   nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed
@@ -161,14 +162,24 @@ function DesignSystem() {
                   ))}
                 </Navbar>
               </div>
-              <div className="flex mt-24">
-                <div className="flex flex-col items-center">
+              <div className="flex justify-between mt-24">
+                <div className="flex flex-col items-center w-6/12">
                   <ButtonLink href="#" text={'explore'} />
                   <p className="text-indigo-100 text-center mt-24">
                     Landing Page Main Button
                   </p>
                 </div>
-                <div></div>
+                <div className="flex flex-col items-center w-6/12">
+                  <Tabs
+                    label="Design System Tabs"
+                    tabs={[
+                      { title: 'Tab 1' },
+                      { title: 'Tab 2' },
+                      { title: 'Tab 3' },
+                    ]}
+                  />
+                  <p className="text-indigo-100 text-center mt-4">Tabs</p>
+                </div>
               </div>
             </div>
           </section>
