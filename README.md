@@ -8,7 +8,7 @@ Space tourism multi-page website. Designs provided by [Frontend Mentor](https://
 
 ### Prerequisites
 
-[Node] (https://nodejs.org/en/) version 14.18.1+
+[Node](https://nodejs.org/en/) version 14.18.1+
 
 Install dependencies:
 
