@@ -1,0 +1,11 @@
+.c-numbered-title {
+  @apply font-condensed text-xl uppercase tracking-widest;
+}
+
+.c-numbered-title__number {
+  @apply font-bold opacity-25;
+}
+
+.c-numbered-title__title {
+  @apply ml-2;
+}

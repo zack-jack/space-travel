@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import ButtonLink from '../../components/ButtonLink';
+import Navbar from '../../components/Navbar';
+import NavbarLink from '../../components/NavbarLink';
 import NumberedTitle from '../../components/NumberedTitle';
 
 function DesignSystem() {
@@ -16,7 +18,7 @@ function DesignSystem() {
           </h1>
 
           <section id="colors" className="mt-10">
-            <NumberedTitle number={'01'} title={'colors'} />
+            <NumberedTitle number={1} title={'colors'} />
             <div className="flex mt-5">
               <div className="flex-grow ">
                 <div className="p-4 pt-10 bg-indigo-900 border border-indigo-200 border-solid">
@@ -73,7 +75,7 @@ function DesignSystem() {
           </section>
 
           <section id="typography" className="mt-10">
-            <NumberedTitle number={'02'} title={'typography'} />
+            <NumberedTitle number={2} title={'typography'} />
             <div className="flex mt-5">
               <div>
                 <p className="text-indigo-100 mt-4">
@@ -140,9 +142,25 @@ function DesignSystem() {
           </section>
 
           <section id="interactive-elements" className="mt-10">
-            <NumberedTitle number={'03'} title={'interactive elements'} />
+            <NumberedTitle number={3} title={'interactive elements'} />
             <div className="mt-5">
-              <div>Navigation Component</div>
+              <div>
+                <Navbar>
+                  {[
+                    ['Home', '#', true],
+                    ['About', '#', false],
+                    ['Contact', '#', false],
+                  ].map(([title, href, active], i) => (
+                    <NavbarLink
+                      key={title}
+                      active={active}
+                      href={href}
+                      index={i}
+                      title={title}
+                    />
+                  ))}
+                </Navbar>
+              </div>
               <div className="flex mt-24">
                 <div className="flex flex-col items-center">
                   <ButtonLink href="#" text={'explore'} />

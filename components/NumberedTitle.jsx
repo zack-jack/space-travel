@@ -1,20 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const prependZero = (number) => {
+  if (number <= 9) {
+    return `0${number}`;
+  }
+  return `${number}`;
+};
+
 const NumberedTitle = ({ number, title, className }) => (
-  <p
-    className={`font-condensed text-xl uppercase tracking-widest ${
-      className || ''
-    }`}
-  >
-    <span className="font-bold opacity-25">{number}</span>
-    <span className="ml-2">{title}</span>
+  <p className={`c-numbered-title ${className || ''}`}>
+    <span className="c-numbered-title__number">{prependZero(number)}</span>
+    <span className="c-numbered-title__title">{title}</span>
   </p>
 );
 
 NumberedTitle.propTypes = {
-  number: PropTypes.string,
-  title: PropTypes.string,
+  number: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
   className: PropTypes.string,
 };
 

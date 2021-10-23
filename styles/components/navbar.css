@@ -1,0 +1,30 @@
+.c-navbar {
+  background: rgba(255, 255, 255, 4%);
+}
+
+.c-navbar__list {
+  @apply flex items-center justify-around;
+}
+
+.c-navbar__list-item::after {
+  @apply block w-full bg-white opacity-0;
+  content: '';
+  height: 3px;
+}
+
+.c-navbar__list-item:hover::after,
+.c-navbar__list-item:focus::after {
+  @apply opacity-50;
+}
+
+.c-navbar__list-item.active::after {
+  @apply opacity-100;
+}
+
+.c-navbar__link > .c-numbered-title {
+  @apply py-10 text-sm leading-none tracking-wider;
+}
+
+.c-navbar__link .c-numbered-title__number {
+  @apply opacity-100;
+}

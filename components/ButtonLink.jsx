@@ -11,8 +11,8 @@ const ButtonLink = ({ href, text, className }) => (
 );
 
 ButtonLink.propTypes = {
-  href: PropTypes.string,
-  text: PropTypes.string,
+  href: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   className: PropTypes.string,
 };
 
