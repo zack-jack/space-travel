@@ -170,15 +170,75 @@ function DesignSystem() {
                   </p>
                 </div>
                 <div className="flex flex-col items-center w-6/12">
-                  <Tabs
-                    label="Design System Tabs"
-                    tabs={[
-                      { title: 'Tab 1' },
-                      { title: 'Tab 2' },
-                      { title: 'Tab 3' },
-                    ]}
-                  />
-                  <p className="text-indigo-100 text-center mt-4">Tabs</p>
+                  <div>
+                    <Tabs
+                      label="Design System Tabs"
+                      tabs={[
+                        { title: 'Tab 1' },
+                        { title: 'Tab 2' },
+                        { title: 'Tab 3' },
+                      ]}
+                    />
+                    <p className="text-indigo-100 text-center mt-4">Tabs</p>
+                  </div>
+                  <div className="flex flex-col items-center mt-24">
+                    {/* Slider Dots */}
+                    <div>
+                      <button
+                        role="tab"
+                        aria-selected="true"
+                        className="c-dot active"
+                      >
+                        <span className="sr-only">Slider dot 1</span>
+                      </button>
+                      <button
+                        role="tab"
+                        aria-selected="false"
+                        className="c-dot ml-6"
+                      >
+                        <span className="sr-only">Slider dot 2</span>
+                      </button>
+                      <button
+                        role="tab"
+                        aria-selected="false"
+                        className="c-dot ml-6"
+                      >
+                        <span className="sr-only">Slider dot 3</span>
+                      </button>
+                    </div>
+                    <p className="text-indigo-100 text-center mt-4">
+                      Slider 1 States (Active, Hover, & Idle)
+                    </p>
+                  </div>
+                  {/* Numbered Slider Dots */}
+                  <div className="flex flex-col items-center mt-24">
+                    <div className="flex flex-col items-center">
+                      <button
+                        role="tab"
+                        aria-selected="true"
+                        className="c-numbered-dot active"
+                      >
+                        1
+                      </button>
+                      <button
+                        role="tab"
+                        aria-selected="false"
+                        className="c-numbered-dot mt-8"
+                      >
+                        2
+                      </button>
+                      <button
+                        role="tab"
+                        aria-selected="false"
+                        className="c-numbered-dot mt-8"
+                      >
+                        3
+                      </button>
+                    </div>
+                    <p className="text-indigo-100 text-center mt-4">
+                      Slider 2 States (Active, Hover, & Idle)
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

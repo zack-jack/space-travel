@@ -1,0 +1,15 @@
+.c-dot {
+  @apply bg-white rounded-full opacity-25;
+  aspect-ratio: 1;
+  width: 15px;
+  transition: all 200ms ease-in-out;
+}
+
+.c-dot:hover,
+.c-dot:focus {
+  @apply opacity-50;
+}
+
+.c-dot.active {
+  @apply opacity-100;
+}

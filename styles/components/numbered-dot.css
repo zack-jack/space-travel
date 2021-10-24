@@ -1,0 +1,15 @@
+.c-numbered-dot {
+  @apply border border-solid border-white rounded-full font-serif text-xl text-white border-opacity-25;
+  aspect-ratio: 1;
+  width: 80px;
+  transition: all 200ms ease-in-out;
+}
+
+.c-numbered-dot:hover,
+.c-numbered-dot:focus {
+  @apply border-opacity-100;
+}
+
+.c-numbered-dot.active {
+  @apply bg-white text-indigo-900 border-opacity-100;
+}
