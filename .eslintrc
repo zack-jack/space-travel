@@ -1,0 +1,12 @@
+{
+  "extends": "next",
+  "root": true,
+  "plugins": ["jsx-a11y", "tailwindcss"],
+  "rules": {
+    "no-multiple-empty-lines": [
+      "error",
+      { "max": 2, "maxEOF": 1, "maxBOF": 0 }
+    ],
+    "tailwindcss/no-contradicting-classname": ["error"]
+  }
+}
