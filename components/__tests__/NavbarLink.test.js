@@ -19,7 +19,11 @@ it('Navigation link active state is true when href matches current path', () => 
     pathname: '/test',
   }));
   const { container } = render(
-    <NavbarLink href="/test" index={0} title="unit test" />
+    <NavbarLink
+      href="/test"
+      index={0}
+      title="unit test"
+    />,
   );
 
   expect(container.firstChild).toHaveClass('active');
@@ -31,7 +35,11 @@ it('Navigation link active state is false when href does not match current path'
     pathname: '/unit-test',
   }));
   const { container } = render(
-    <NavbarLink href="/test" index={0} title="unit test" />
+    <NavbarLink
+      href="/test"
+      index={0}
+      title="unit test"
+    />,
   );
 
   expect(container.firstChild).not.toHaveClass('active');
@@ -43,7 +51,12 @@ it('Navigation link active state is true when passed active prop', () => {
     pathname: '/test',
   }));
   const { container } = render(
-    <NavbarLink active href="/test" index={0} title="unit test" />
+    <NavbarLink
+      active
+      href="/test"
+      index={0}
+      title="unit test"
+    />,
   );
 
   expect(container.firstChild).toHaveClass('active');
@@ -55,7 +68,12 @@ it('Navigation link active state is false when href does not match current path 
     pathname: '/unit-test',
   }));
   const { container } = render(
-    <NavbarLink active={false} href="/test" index={0} title="unit test" />
+    <NavbarLink
+      active={false}
+      href="/test"
+      index={0}
+      title="unit test"
+    />,
   );
 
   expect(container.firstChild).not.toHaveClass('active');

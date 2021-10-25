@@ -1,12 +1,57 @@
 {
-  "extends": "next",
-  "root": true,
+  "extends": ["next/core-web-vitals", "airbnb"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "cwd": "web",
+      "presets": ["@babel/preset-react"]
+    }
+  },
   "plugins": ["jsx-a11y", "tailwindcss"],
   "rules": {
-    "no-multiple-empty-lines": [
+    "strict": "off",
+    "max-len": "off",
+    "arrow-body-style": "warn",
+    "no-console": "error",
+    "class-methods-use-this": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-no-target-blank": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "off",
+    "jsx-a11y/label-has-associated-control": "warn",
+    "jsx-a11y/label-has-for": "warn",
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 5 }],
+    "@next/next/no-img-element": "off",
+    "jsx-a11y/anchor-is-valid": [
       "error",
-      { "max": 2, "maxEOF": 1, "maxBOF": 0 }
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ],
+    "react/jsx-max-props-per-line": [
+      "error",
+      {
+        "maximum": 1,
+        "when": "always"
+      }
     ],
     "tailwindcss/no-contradicting-classname": ["error"]
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.js",
+        "**/*.test.jsx",
+        "**/**/*.test.js",
+        "**/**/*.test.jsx"
+      ],
+      "env": {
+        "jest": true
+      },
+      "plugins": ["jest"]
+    }
+  ]
 }

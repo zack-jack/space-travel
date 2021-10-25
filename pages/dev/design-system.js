@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 import ButtonLink from '../../components/ButtonLink';
 import Navbar from '../../components/Navbar';
@@ -18,8 +19,14 @@ function DesignSystem() {
             Design System
           </h1>
 
-          <section id="colors" className="mt-10">
-            <NumberedTitle number={1} title={'colors'} />
+          <section
+            id="colors"
+            className="mt-10"
+          >
+            <NumberedTitle
+              number={1}
+              title="colors"
+            />
             <div className="flex mt-5">
               <div className="flex-grow ">
                 <div className="p-4 pt-10 bg-indigo-900 border border-indigo-200 border-solid">
@@ -28,13 +35,15 @@ function DesignSystem() {
                 <p className="mt-5">
                   <span className="w-40 mr-8 uppercase text-indigo-100">
                     RGB
-                  </span>{' '}
+                  </span>
+                  {' '}
                   11, 13, 23
                 </p>
                 <p>
                   <span className="w-40 mr-8 uppercase text-indigo-100">
                     HSL
-                  </span>{' '}
+                  </span>
+                  {' '}
                   230°, 35%, 7%
                 </p>
               </div>
@@ -45,13 +54,15 @@ function DesignSystem() {
                 <p className="mt-5">
                   <span className="w-40 mr-8 uppercase text-indigo-100">
                     RGB
-                  </span>{' '}
+                  </span>
+                  {' '}
                   208, 214, 249
                 </p>
                 <p>
                   <span className="w-40 mr-8 uppercase text-indigo-100">
                     HSL
-                  </span>{' '}
+                  </span>
+                  {' '}
                   231°, 77%, 90%
                 </p>
               </div>
@@ -62,21 +73,29 @@ function DesignSystem() {
                 <p className="mt-5">
                   <span className="w-40 mr-8 uppercase text-indigo-100">
                     RGB
-                  </span>{' '}
+                  </span>
+                  {' '}
                   255, 255, 255
                 </p>
                 <p>
                   <span className="w-40 mr-8 uppercase text-indigo-100">
                     HSL
-                  </span>{' '}
+                  </span>
+                  {' '}
                   0°, 0%, 100%
                 </p>
               </div>
             </div>
           </section>
 
-          <section id="typography" className="mt-10">
-            <NumberedTitle number={2} title={'typography'} />
+          <section
+            id="typography"
+            className="mt-10"
+          >
+            <NumberedTitle
+              number={2}
+              title="typography"
+            />
             <div className="flex justify-between mt-5">
               <div className="flex flex-col">
                 <p className="text-indigo-100 mt-4">
@@ -142,8 +161,14 @@ function DesignSystem() {
             </div>
           </section>
 
-          <section id="interactive-elements" className="mt-10">
-            <NumberedTitle number={3} title={'interactive elements'} />
+          <section
+            id="interactive-elements"
+            className="mt-10"
+          >
+            <NumberedTitle
+              number={3}
+              title="interactive elements"
+            />
             <div className="mt-5">
               <div>
                 <Navbar>
@@ -164,7 +189,10 @@ function DesignSystem() {
               </div>
               <div className="flex justify-between mt-24">
                 <div className="flex flex-col items-center w-6/12">
-                  <ButtonLink href="#" text={'explore'} />
+                  <ButtonLink
+                    href="#"
+                    text="explore"
+                  />
                   <p className="text-indigo-100 text-center mt-24">
                     Landing Page Main Button
                   </p>
@@ -185,6 +213,7 @@ function DesignSystem() {
                     {/* Slider Dots */}
                     <div>
                       <button
+                        type="button"
                         role="tab"
                         aria-selected="true"
                         className="c-dot active"
@@ -192,6 +221,7 @@ function DesignSystem() {
                         <span className="sr-only">Slider dot 1</span>
                       </button>
                       <button
+                        type="button"
                         role="tab"
                         aria-selected="false"
                         className="c-dot ml-6"
@@ -199,6 +229,7 @@ function DesignSystem() {
                         <span className="sr-only">Slider dot 2</span>
                       </button>
                       <button
+                        type="button"
                         role="tab"
                         aria-selected="false"
                         className="c-dot ml-6"
@@ -214,6 +245,7 @@ function DesignSystem() {
                   <div className="flex flex-col items-center mt-24">
                     <div className="flex flex-col items-center">
                       <button
+                        type="button"
                         role="tab"
                         aria-selected="true"
                         className="c-numbered-dot active"
@@ -221,6 +253,7 @@ function DesignSystem() {
                         1
                       </button>
                       <button
+                        type="button"
                         role="tab"
                         aria-selected="false"
                         className="c-numbered-dot mt-8"
@@ -228,6 +261,7 @@ function DesignSystem() {
                         2
                       </button>
                       <button
+                        type="button"
                         role="tab"
                         aria-selected="false"
                         className="c-numbered-dot mt-8"

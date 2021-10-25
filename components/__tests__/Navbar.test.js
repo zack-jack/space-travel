@@ -6,15 +6,15 @@ it('Navigation link children are rendered', () => {
   render(
     <Navbar>
       <li>
-        <a href="#">Test 1</a>
+        <a>Test 1</a>
       </li>
       <li>
-        <a href="#">Test 2</a>
+        <a>Test 2</a>
       </li>
       <li>
-        <a href="#">Test 3</a>
+        <a>Test 3</a>
       </li>
-    </Navbar>
+    </Navbar>,
   );
 
   const links = screen.getAllByText(/Test [0-9]/i);

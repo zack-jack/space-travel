@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Tab = ({ id, index, selectedTab, title, handleClick }) => (
+const Tab = ({
+  id, index, selectedTab, title, handleClick,
+}) => (
   <li
     role="presentation"
     className={`c-tab ${selectedTab === index ? 'active' : ''}`}
   >
     <button
-      role="tab"
       id={id}
+      role="tab"
+      type="button"
       aria-selected={selectedTab === index}
       aria-controls={id}
       className="c-tab__button"

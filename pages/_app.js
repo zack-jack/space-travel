@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import '../styles/globals.css';
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps = {} }) => {
   const router = useRouter();
 
   useEffect(() => {
@@ -21,8 +22,14 @@ const App = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicon.ico"
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -40,17 +47,46 @@ const App = ({ Component, pageProps }) => {
           sizes="16x16"
           href="/favicon-16x16.png"
         />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0b0d17" />
-        <meta name="msapplication-TileColor" content="#0b0d17" />
-        <meta name="application-name" content="Space" />
-        <meta name="theme-color" content="#ffffff" />
+        <link
+          rel="manifest"
+          href="/site.webmanifest"
+        />
+        <link
+          rel="mask-icon"
+          href="/safari-pinned-tab.svg"
+          color="#0b0d17"
+        />
+        <meta
+          name="msapplication-TileColor"
+          content="#0b0d17"
+        />
+        <meta
+          name="application-name"
+          content="Space"
+        />
+        <meta
+          name="theme-color"
+          content="#ffffff"
+        />
       </Head>
-      <main id="app" className="flex flex-col min-h-screen">
+      <main
+        id="app"
+        className="flex flex-col min-h-screen"
+      >
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Component {...pageProps} />
       </main>
     </>
   );
+};
+
+App.defaultProps = {
+  pageProps: {},
+};
+
+App.propTypes = {
+  Component: PropTypes.node.isRequired,
+  pageProps: PropTypes.shape({}),
 };
 
 export default App;

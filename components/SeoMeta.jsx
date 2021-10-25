@@ -30,11 +30,12 @@ const ensureDomain = (url) => {
  * @return {object} The normalized metadata object.
  */
 const buildMetadata = (meta, path) => {
-  const { ogType, twitterTitle, twitterDescription, twitterImage } = meta;
+  const {
+    ogType, twitterTitle, twitterDescription, twitterImage,
+  } = meta;
   const baseTitle = meta.baseTitle || 'Space';
   const title = meta.title || '';
-  const description =
-    meta.description || meta.ogDescription || metaDefaults.description;
+  const description = meta.description || meta.ogDescription || metaDefaults.description;
   const ogUrl = ensureDomain(meta.ogUrl || path);
   const canonicalUrl = ensureDomain(meta.canonicalUrl) || ogUrl;
   const ogTitle = meta.ogTitle || title;
@@ -58,28 +59,71 @@ const buildMetadata = (meta, path) => {
   };
 };
 
-const SeoMeta = ({ meta, children, noIndex = false }) => {
+const SeoMeta = ({ meta, children = null, noIndex = false }) => {
   const router = useRouter();
   const metadata = buildMetadata(meta, router?.asPath || '/');
 
   return (
     <Head>
       <title>{metadata.title}</title>
-      <meta name="description" content={metadata.description} />
-      <meta property="og:title" content={metadata.ogTitle} />
-      <meta property="og:url" content={metadata.ogUrl} />
-      <meta property="og:image" content={metadata.ogImage} />
-      <meta property="og:type" content={metadata.ogType} />
-      <meta property="og:description" content={metadata.ogDescription} />
-      <meta name="twitter:title" content={metadata.twitterTitle} />
-      <meta name="twitter:description" content={metadata.twitterDescription} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={metadata.twitterImage} />
-      {noIndex && <meta name="robots" content="noindex" />}
-      <link rel="canonical" href={metadata.canonicalUrl} />
+      <meta
+        name="description"
+        content={metadata.description}
+      />
+      <meta
+        property="og:title"
+        content={metadata.ogTitle}
+      />
+      <meta
+        property="og:url"
+        content={metadata.ogUrl}
+      />
+      <meta
+        property="og:image"
+        content={metadata.ogImage}
+      />
+      <meta
+        property="og:type"
+        content={metadata.ogType}
+      />
+      <meta
+        property="og:description"
+        content={metadata.ogDescription}
+      />
+      <meta
+        name="twitter:title"
+        content={metadata.twitterTitle}
+      />
+      <meta
+        name="twitter:description"
+        content={metadata.twitterDescription}
+      />
+      <meta
+        name="twitter:card"
+        content="summary_large_image"
+      />
+      <meta
+        name="twitter:image"
+        content={metadata.twitterImage}
+      />
+      {noIndex && (
+      <meta
+        name="robots"
+        content="noindex"
+      />
+      )}
+      <link
+        rel="canonical"
+        href={metadata.canonicalUrl}
+      />
       {children}
     </Head>
   );
+};
+
+SeoMeta.defaultProps = {
+  children: null,
+  noIndex: false,
 };
 
 SeoMeta.propTypes = {

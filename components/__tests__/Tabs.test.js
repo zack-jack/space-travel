@@ -7,7 +7,7 @@ it('Default tab has active state', () => {
     <Tabs
       label="Test"
       tabs={[{ title: 'Tab 1' }, { title: 'Tab 2' }, { title: 'Tab 3' }]}
-    />
+    />,
   );
 
   const firstTab = screen.getByText(/Tab 1/i);
@@ -20,7 +20,7 @@ it('Tab selection sets active state', () => {
     <Tabs
       label="Test"
       tabs={[{ title: 'Tab 1' }, { title: 'Tab 2' }, { title: 'Tab 3' }]}
-    />
+    />,
   );
 
   const secondTab = screen.getByText(/Tab 2/i);

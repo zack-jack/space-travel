@@ -8,12 +8,16 @@ const prependZero = (number) => {
   return `${number}`;
 };
 
-const NumberedTitle = ({ number, title, className }) => (
+const NumberedTitle = ({ number, title, className = '' }) => (
   <p className={`c-numbered-title ${className || ''}`}>
     <span className="c-numbered-title__number">{prependZero(number)}</span>
     <span className="c-numbered-title__title">{title}</span>
   </p>
 );
+
+NumberedTitle.defaultProps = {
+  className: '',
+};
 
 NumberedTitle.propTypes = {
   number: PropTypes.number.isRequired,
