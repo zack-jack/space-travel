@@ -1,17 +1,20 @@
 import React from 'react';
-import Head from 'next/head';
 import ButtonLink from '../../components/ButtonLink';
 import Navbar from '../../components/Navbar';
 import NavbarLink from '../../components/NavbarLink';
 import NumberedTitle from '../../components/NumberedTitle';
+import SeoMeta from '../../components/SeoMeta';
 import Tabs from '../../components/Tabs';
 
-function DesignSystem() {
+const DesignSystem = () => {
+  const meta = { title: 'Design System' };
+
   return (
     <div>
-      <Head>
-        <title>Space | Design System</title>
-      </Head>
+      <SeoMeta
+        meta={meta}
+        noIndex
+      />
 
       <main className="flex">
         <div className="flex-grow bg-indigo-900 px-24 py-10 text-white">
@@ -189,10 +192,7 @@ function DesignSystem() {
               </div>
               <div className="flex justify-between mt-24">
                 <div className="flex flex-col items-center w-6/12">
-                  <ButtonLink
-                    href="#"
-                    text="explore"
-                  />
+                  <ButtonLink href="#">Explore</ButtonLink>
                   <p className="text-indigo-100 text-center mt-24">
                     Landing Page Main Button
                   </p>
@@ -281,7 +281,7 @@ function DesignSystem() {
       </main>
     </div>
   );
-}
+};
 
 export function getStaticProps() {
   return {

@@ -19,6 +19,14 @@ const App = ({ Component, pageProps = {} }) => {
     };
   }, [router]);
 
+  const genPageClass = (path) => {
+    if (path === '/') return 'page-home';
+
+    const pathParts = path.split('/');
+    pathParts.shift();
+    return `page-${pathParts[0]}`;
+  };
+
   return (
     <>
       <Head>
@@ -71,7 +79,7 @@ const App = ({ Component, pageProps = {} }) => {
       </Head>
       <main
         id="app"
-        className="flex flex-col min-h-screen"
+        className={`flex flex-col min-h-screen bg-indigo-900 ${genPageClass(router.pathname)}`}
       >
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}
         <Component {...pageProps} />
@@ -85,7 +93,7 @@ App.defaultProps = {
 };
 
 App.propTypes = {
-  Component: PropTypes.node.isRequired,
+  Component: PropTypes.elementType.isRequired,
   pageProps: PropTypes.shape({}),
 };
 

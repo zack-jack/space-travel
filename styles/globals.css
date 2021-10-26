@@ -1,5 +1,6 @@
-@tailwind base;
+@import 'tailwindcss/base';
 @import './base/index.css';
-@tailwind components;
+@import 'tailwindcss/components';
 @import './components/index.css';
-@tailwind utilities;
+@import './layout/index.css';
+@import 'tailwindcss/utilities';

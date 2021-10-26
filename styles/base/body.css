@@ -1,3 +1,7 @@
 body {
-  @apply text-base font-normal leading-6;
+  @apply text-sm text-indigo-100 font-sans font-normal leading-6;
+
+  @media screen(lg) {
+    @apply text-base;
+  }
 }

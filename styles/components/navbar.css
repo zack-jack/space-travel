@@ -1,4 +1,5 @@
 .c-navbar {
+  @apply text-white;
   background: rgba(255, 255, 255, 4%);
 }
 
