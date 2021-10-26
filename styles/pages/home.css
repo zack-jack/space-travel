@@ -1,0 +1,13 @@
+.page-home {
+  @apply bg-cover bg-bottom;
+  background-image: url('../public/images/home/bg-home-mobile.jpg');
+
+  @media screen(md) {
+    @apply bg-center;
+    background-image: url('../public/images/home/bg-home-tablet.jpg');
+  }
+
+  @media screen(lg) {
+    background-image: url('../public/images/home/bg-home-desktop.jpg');
+  }
+}
