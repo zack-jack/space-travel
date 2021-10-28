@@ -1,17 +1,67 @@
 .c-navbar {
-  @apply text-white;
-  background: rgba(255, 255, 255, 4%);
+  @apply absolute inset-0 left-1/4 bg-indigo-900 bg-opacity-90 text-white z-40;
+  transition: all 300ms ease-in-out;
+
+  @media screen(md) {
+    @apply static z-auto;
+  }
+}
+
+@supports(backdrop-filter: blur(1rem)) {
+  .c-navbar {
+    @apply bg-white bg-opacity-10 backdrop-filter backdrop-blur-xl;
+  }
+}
+
+.c-navbar--open {
+  @apply transform translate-x-0;
+}
+
+.c-navbar--closed {
+  @apply transform translate-x-full;
 }
 
 .c-navbar__list {
-  @apply flex items-center justify-around;
+  @apply flex flex-col pt-28 pl-8 z-40;
+
+  @media screen(md) {
+    @apply flex-row items-center justify-around pt-0 px-12 z-auto;
+  }
+
+  @media screen(lg) {
+    @apply px-32;
+  }
+}
+
+.c-navbar__list-item {
+  @apply relative;
+
+  @media screen(md) {
+    @apply static;
+  }
+}
+
+.c-navbar__list-item:not(:first-child) {
+  @apply mt-6;
+
+  @media screen(md) {
+    @apply mt-0 ml-7;
+  }
+
+  @media screen(lg) {
+    @apply ml-12;
+  }
 }
 
 .c-navbar__list-item::after {
-  @apply block w-full bg-white opacity-0;
+  @apply absolute top-0 right-0 bottom-0 block w-1 bg-white opacity-0;
   content: '';
-  height: 3px;
   transition: all 200ms ease-in-out;
+
+  @media screen(md) {
+    @apply static w-full;
+    height: 3px;
+  }
 }
 
 .c-navbar__list-item:hover::after,
@@ -23,10 +73,82 @@
   @apply opacity-100;
 }
 
+.c-navbar__title,
 .c-navbar__link > .c-numbered-title {
-  @apply py-10 text-sm leading-none tracking-wider;
+  @apply py-2 text-sm font-condensed uppercase leading-none tracking-wider;
+
+  @media screen(md) {
+    @apply text-xs py-10;
+  }
+
+  @media screen(lg) {
+    @apply text-sm;
+  }
 }
 
 .c-navbar__link .c-numbered-title__number {
   @apply opacity-100;
+}
+
+.c-navbar__burger {
+  @apply inline-block cursor-pointer z-50;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+
+  @media screen(md) {
+    @apply hidden;
+  }
+}
+
+.c-navbar__burger-box {
+  @apply relative inline-block w-6 h-5 z-50;
+}
+
+.c-navbar__burger-inner,
+.c-navbar__burger-inner::before,
+.c-navbar__burger-inner::after {
+  @apply absolute block w-full bg-indigo-100 rounded;
+  height: 3px;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.c-navbar__burger-inner {
+  @apply top-1/2;
+  margin-top: -2px;
+  transition-duration: 0.075s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.c-navbar__burger-inner::before,
+.c-navbar__burger-inner::after {
+  content: "";
+}
+
+.c-navbar__burger-inner::before {
+  @apply -top-2;
+  transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+}
+
+.c-navbar__burger-inner::after {
+  @apply -bottom-2;
+  transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.c-navbar__burger.active .c-navbar__burger-inner {
+  @apply transform-gpu rotate-45;
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.c-navbar__burger.active .c-navbar__burger-inner::before {
+  @apply top-0 opacity-0;
+  transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+}
+
+.c-navbar__burger.active .c-navbar__burger-inner::after {
+  @apply bottom-0 transform-gpu -rotate-90;
+  transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }

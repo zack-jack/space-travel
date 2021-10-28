@@ -10,7 +10,12 @@ const prependZero = (number) => {
 
 const NumberedTitle = ({ number, title, className = '' }) => (
   <p className={`c-numbered-title ${className || ''}`}>
-    <span className="c-numbered-title__number">{prependZero(number)}</span>
+    <span
+      aria-hidden="true"
+      className="c-numbered-title__number"
+    >
+      {prependZero(number)}
+    </span>
     <span className="c-numbered-title__title">{title}</span>
   </p>
 );

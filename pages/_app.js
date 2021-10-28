@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
+import HeaderDesktop from '../components/HeaderDesktop';
+import HeaderMobile from '../components/HeaderMobile';
+import useDeviceDetect from '../hooks/useDeviceDetect';
 import '../styles/globals.css';
 
 const App = ({ Component, pageProps = {} }) => {
   const router = useRouter();
+  const { isMobile } = useDeviceDetect();
 
   useEffect(() => {
     /* reset focus to body tag every time page changes for keyboard accessibiliy. */
@@ -77,13 +81,20 @@ const App = ({ Component, pageProps = {} }) => {
           content="#ffffff"
         />
       </Head>
-      <main
+
+      <div
         id="app"
-        className={`flex flex-col min-h-screen bg-indigo-900 ${genPageClass(router.pathname)}`}
+        className={`relative flex flex-col min-h-screen bg-indigo-900 overflow-hidden ${genPageClass(router.pathname)}`}
       >
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
-      </main>
+        { isMobile ? <HeaderMobile /> : <HeaderDesktop /> }
+        <main
+          id="main"
+          className="flex-grow"
+        >
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          <Component {...pageProps} />
+        </main>
+      </div>
     </>
   );
 };

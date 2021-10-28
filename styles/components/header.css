@@ -1,0 +1,23 @@
+.c-header {
+  @apply flex items-center justify-between mt-6 px-6;
+
+  @media screen(md) {
+    @apply flex items-center justify-between lg:mt-10 pl-14;
+  }
+}
+
+.c-header::after {
+  @media screen(lg) {
+    @apply relative h-px w-full -mr-8 bg-white opacity-25;
+    content: '';
+  }
+}
+
+.c-header__logo {
+  @apply w-10 h-10 bg-cover;
+  background-image: url('/images/logo.svg');
+
+  @media screen(md) {
+    @apply w-12 h-12 mr-16;
+  }
+}

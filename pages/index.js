@@ -1,50 +1,17 @@
 import React from 'react';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
 import ButtonLink from '../components/ButtonLink';
-import Navbar from '../components/Navbar';
-import NavbarLink from '../components/NavbarLink';
 import SeoMeta from '../components/SeoMeta';
 
 const Home = () => {
-  const { pathname } = useRouter();
   const meta = {
     title: 'Home',
     description:
       'Space provides space travel and tourism that is truly out of this world.',
   };
-  const navLinks = [
-    ['Home', '/'],
-    ['Destination', '#'],
-    ['Crew', '#'],
-    ['Technology', '#'],
-  ];
 
   return (
     <>
       <SeoMeta meta={meta} />
-
-      <header className="flex">
-        <div>
-          <Image
-            src="/images/logo.svg"
-            alt="Space Tourism logo"
-            width={48}
-            height={48}
-          />
-        </div>
-        <Navbar>
-          {navLinks.map(([title, href], i) => (
-            <NavbarLink
-              key={title}
-              active={pathname === href}
-              href={href}
-              index={i}
-              title={title}
-            />
-          ))}
-        </Navbar>
-      </header>
 
       <div className="l-container">
         <section className="l-col-2 lg:items-end">

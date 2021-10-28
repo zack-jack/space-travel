@@ -5,19 +5,30 @@ import PropTypes from 'prop-types';
 import NumberedTitle from './NumberedTitle';
 
 const NavbarLink = ({
-  active = false, href, index, title,
+  href, index, title, active = false, numbered = true,
 }) => {
   const { pathname } = useRouter();
   const isActive = active || pathname === href;
 
   return (
-    <li className={`c-navbar__list-item ${isActive ? 'active' : ''}`}>
+    <li
+      role="none"
+      className={`c-navbar__list-item ${isActive ? 'active' : ''}`}
+    >
       <Link href={href}>
-        <a className="c-navbar__link">
-          <NumberedTitle
-            number={index}
-            title={title}
-          />
+        <a
+          role="menuitem"
+          className="c-navbar__link"
+        >
+          {
+            numbered
+              ? (
+                <NumberedTitle
+                  number={index}
+                  title={title}
+                />
+              ) : <p className="c-navbar__title">{title}</p>
+          }
         </a>
       </Link>
     </li>
@@ -26,13 +37,15 @@ const NavbarLink = ({
 
 NavbarLink.defaultProps = {
   active: false,
+  numbered: true,
 };
 
 NavbarLink.propTypes = {
-  active: PropTypes.bool,
   href: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
+  active: PropTypes.bool,
+  numbered: PropTypes.bool,
 };
 
 export default NavbarLink;

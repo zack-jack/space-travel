@@ -1,6 +1,5 @@
 import React from 'react';
 import ButtonLink from '../../components/ButtonLink';
-import Navbar from '../../components/Navbar';
 import NavbarLink from '../../components/NavbarLink';
 import NumberedTitle from '../../components/NumberedTitle';
 import SeoMeta from '../../components/SeoMeta';
@@ -174,21 +173,28 @@ const DesignSystem = () => {
             />
             <div className="mt-5">
               <div>
-                <Navbar>
-                  {[
-                    ['Home', '#', true],
-                    ['About', '#', false],
-                    ['Contact', '#', false],
-                  ].map(([title, href, active], i) => (
-                    <NavbarLink
-                      key={title}
-                      active={active}
-                      href={href}
-                      index={i}
-                      title={title}
-                    />
-                  ))}
-                </Navbar>
+                <nav className="c-navbar">
+                  <ul
+                    id="mobile-navigation"
+                    aria-labelledby="mobile-menu-btn"
+                    role="menu"
+                    className="c-navbar__list"
+                  >
+                    {[
+                      ['Home', '#', true],
+                      ['About', '#', false],
+                      ['Contact', '#', false],
+                    ].map(([title, href, active], i) => (
+                      <NavbarLink
+                        key={title}
+                        active={active}
+                        href={href}
+                        index={i}
+                        title={title}
+                      />
+                    ))}
+                  </ul>
+                </nav>
               </div>
               <div className="flex justify-between mt-24">
                 <div className="flex flex-col items-center w-6/12">

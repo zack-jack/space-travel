@@ -1,5 +1,5 @@
 .c-btn {
-  @apply relative bg-white rounded-full z-10;
+  @apply relative flex items-center bg-white rounded-full z-10;
   width: 150px;
   aspect-ratio: 1;
 
