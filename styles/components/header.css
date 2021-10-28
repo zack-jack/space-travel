@@ -16,8 +16,12 @@
 .c-header__logo {
   @apply w-10 h-10 bg-cover;
   background-image: url('/images/logo.svg');
+  min-width: 2.5rem;
+  min-height: 2.5rem;
 
   @media screen(md) {
-    @apply w-12 h-12 mr-16;
+    @apply w-12 h-12;
+    min-width: 3rem;
+    min-height: 3rem;
   }
 }

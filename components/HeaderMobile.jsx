@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import NavbarLink from './NavbarLink';
 import useNavLinks from '../hooks/useNavLinks';
 import useOnClickOutside from '../hooks/useOnClickOutside';
@@ -14,10 +15,14 @@ const HeaderMobile = () => {
 
   return (
     <header className="c-header">
-      <div
-        aria-hidden="true"
-        className="c-header__logo"
-      />
+      <Link href="/">
+        <a>
+          <div
+            aria-hidden="true"
+            className="c-header__logo"
+          />
+        </a>
+      </Link>
       <div ref={menuRef}>
         <button
           id="mobile-menu-btn"

@@ -89,7 +89,7 @@ const App = ({ Component, pageProps = {} }) => {
         { isMobile ? <HeaderMobile /> : <HeaderDesktop /> }
         <main
           id="main"
-          className="flex-grow"
+          className="flex flex-col flex-grow"
         >
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}
           <Component {...pageProps} />

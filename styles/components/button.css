@@ -25,10 +25,17 @@
 }
 
 .c-btn__link {
-  @apply flex items-center justify-center w-full h-full rounded-full font-serif text-md text-indigo-900 uppercase leading-none;
+  @apply flex items-center justify-center rounded-full font-serif text-md text-indigo-900 uppercase leading-none;
   letter-spacing: 1.25px;
+  width: 150px;
+  aspect-ratio: 1;
 
   @media screen(md) {
     @apply text-xl tracking-wide;
+    width: 242px;
+  }
+
+  @media screen(lg) {
+    width: 274px;
   }
 }

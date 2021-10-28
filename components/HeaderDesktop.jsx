@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import NavbarLink from './NavbarLink';
 import useDeviceDetect from '../hooks/useDeviceDetect';
 import useNavLinks from '../hooks/useNavLinks';
@@ -11,10 +12,14 @@ const HeaderDesktop = () => {
 
   return (
     <header className="c-header">
-      <div
-        aria-hidden="true"
-        className="c-header__logo order-first"
-      />
+      <Link href="/">
+        <a className="mr-16">
+          <div
+            aria-hidden="true"
+            className="c-header__logo order-first"
+          />
+        </a>
+      </Link>
       <nav className="c-navbar order-last">
         <ul
           id="mobile-navigation"
