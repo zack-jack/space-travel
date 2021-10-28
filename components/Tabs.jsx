@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Tab from './Tab';
 
 const Tabs = ({ tabs, label, className = '' }) => {
@@ -10,7 +11,7 @@ const Tabs = ({ tabs, label, className = '' }) => {
     <ul
       role="tablist"
       aria-label={label}
-      className={`c-tabs ${className || ''}`}
+      className={classNames('c-tabs', { className })}
     >
       {tabs.map(({ title }, i) => (
         <Tab

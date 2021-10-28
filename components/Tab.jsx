@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const Tab = ({
   id, index, selectedTab, title, handleClick,
 }) => (
   <li
     role="presentation"
-    className={`c-tab ${selectedTab === index ? 'active' : ''}`}
+    className={classNames('c-tab', { active: selectedTab === index })}
   >
     <button
       id={id}

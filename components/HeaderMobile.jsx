@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import classNames from 'classnames';
 import NavbarLink from './NavbarLink';
 import useNavLinks from '../hooks/useNavLinks';
 import useOnClickOutside from '../hooks/useOnClickOutside';
@@ -30,7 +31,7 @@ const HeaderMobile = () => {
           aria-expanded={isMenuOpen}
           aria-haspopup="true"
           type="button"
-          className={`c-navbar__burger ${isMenuOpen ? 'active' : ''}`}
+          className={classNames('c-navbar__burger', { active: isMenuOpen })}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="not-sr-only">
@@ -42,7 +43,10 @@ const HeaderMobile = () => {
         </button>
         <nav
           aria-hidden={!isMenuOpen}
-          className={`c-navbar ${isMenuOpen ? 'c-navbar--open' : 'c-navbar--closed'}`}
+          className={classNames(
+            'c-navbar__burger',
+            { 'c-navbar--open': isMenuOpen, 'c-navbar--closed': !isMenuOpen },
+          )}
         >
           <ul
             id="mobile-navigation"

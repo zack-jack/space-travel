@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const prependZero = (number) => {
   if (number <= 9) {
@@ -9,7 +10,7 @@ const prependZero = (number) => {
 };
 
 const NumberedTitle = ({ number, title, className = '' }) => (
-  <p className={`c-numbered-title ${className || ''}`}>
+  <p className={classNames('c-numbered-title', { className })}>
     <span
       aria-hidden="true"
       className="c-numbered-title__number"

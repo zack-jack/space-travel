@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import NumberedTitle from './NumberedTitle';
 
 const NavbarLink = ({
@@ -13,7 +14,7 @@ const NavbarLink = ({
   return (
     <li
       role="none"
-      className={`c-navbar__list-item ${isActive ? 'active' : ''}`}
+      className={classNames('c-navbar__list-item', { active: isActive })}
     >
       <Link href={href}>
         <a
