@@ -1,5 +1,13 @@
 .c-numbered-title {
-  @apply font-condensed text-xl uppercase tracking-widest;
+  @apply text-sm font-condensed uppercase tracking-wider;
+
+  @media screen(md) {
+    @apply text-md tracking-widest;
+  }
+
+  @media screen(lg) {
+    @apply text-lg;
+  }
 }
 
 .c-numbered-title__number {
@@ -7,5 +15,9 @@
 }
 
 .c-numbered-title__title {
-  @apply ml-2;
+  @apply ml-4;
+
+  @media screen(md) {
+    @apply ml-7;
+  }
 }

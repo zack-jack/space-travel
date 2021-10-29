@@ -2,7 +2,11 @@
   @apply flex items-center justify-between mt-6 px-6;
 
   @media screen(md) {
-    @apply flex items-center justify-between lg:mt-10 pl-14;
+    @apply flex items-center justify-between mt-0 p-0 pl-14;
+  }
+
+  @media screen(lg) {
+    @apply mt-10;
   }
 }
 

@@ -1,43 +1,43 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Tab from './Tab';
 
-const Tabs = ({ tabs, label, className = '' }) => {
-  const [selectedTab, setSelectedTab] = useState(0);
-  const handleClick = (i) => setSelectedTab(i);
-
-  return (
-    <ul
-      role="tablist"
-      aria-label={label}
-      className={classNames('c-tabs', { className })}
-    >
-      {tabs.map(({ title }, i) => (
-        <Tab
-          id={`${title.replace(' ', '-')}-${i}`}
-          key={`${title.replace(' ', '-')}`}
-          index={i}
-          handleClick={handleClick}
-          selectedTab={selectedTab}
-          title={title}
-        />
-      ))}
-    </ul>
-  );
-};
+const Tabs = ({
+  activeTab, tabs, label, handleClick, className = '',
+}) => (
+  <ul
+    role="tablist"
+    aria-label={label}
+    className={classNames('c-tabs', { className })}
+  >
+    {tabs.map(({ name }, i) => (
+      <Tab
+        id={`${name.replace(' ', '-')}-${i}`}
+        key={`${name.replace(' ', '-')}`}
+        index={i}
+        handleClick={() => handleClick(i)}
+        activeTab={activeTab}
+        name={name}
+      />
+    ))}
+  </ul>
+);
 
 Tabs.defaultProps = {
+  activeTab: 0,
   className: '',
 };
 
 Tabs.propTypes = {
+  activeTab: PropTypes.number,
   tabs: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
     }),
   ).isRequired,
   label: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired,
   className: PropTypes.string,
 };
 

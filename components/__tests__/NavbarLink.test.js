@@ -13,7 +13,7 @@ jest.mock('next/router', () => ({
 
 const useRouter = jest.spyOn(require('next/router'), 'useRouter');
 
-it('Navigation link active state is true when href matches current path', () => {
+test('Navigation link active state is true when href matches current path', () => {
   useRouter.mockImplementation(() => ({
     route: '/test',
     pathname: '/test',
@@ -29,7 +29,7 @@ it('Navigation link active state is true when href matches current path', () => 
   expect(container.firstChild).toHaveClass('active');
 });
 
-it('Navigation link active state is false when href does not match current path', () => {
+test('Navigation link active state is false when href does not match current path', () => {
   useRouter.mockImplementation(() => ({
     route: '/unit-test',
     pathname: '/unit-test',
@@ -45,7 +45,7 @@ it('Navigation link active state is false when href does not match current path'
   expect(container.firstChild).not.toHaveClass('active');
 });
 
-it('Navigation link active state is true when passed active prop', () => {
+test('Navigation link active state is true when passed active prop', () => {
   useRouter.mockImplementation(() => ({
     route: '/test',
     pathname: '/test',
@@ -62,7 +62,7 @@ it('Navigation link active state is true when passed active prop', () => {
   expect(container.firstChild).toHaveClass('active');
 });
 
-it('Navigation link active state is false when href does not match current path and active prop is false', () => {
+test('Navigation link active state is false when href does not match current path and active prop is false', () => {
   useRouter.mockImplementation(() => ({
     route: '/unit-test',
     pathname: '/unit-test',

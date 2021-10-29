@@ -30,7 +30,7 @@ const Home = () => {
             </p>
           </div>
           <div className="flex flex-col justify-end mt-10 lg:mt-0 lg:ml-20">
-            <ButtonLink href="#">Explore</ButtonLink>
+            <ButtonLink href="/destination">Explore</ButtonLink>
           </div>
         </section>
       </div>

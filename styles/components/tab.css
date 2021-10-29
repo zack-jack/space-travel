@@ -2,10 +2,6 @@
   @apply flex items-center;
 }
 
-.c-tab {
-  @apply text-indigo-100 leading-none;
-}
-
 .c-tab::after {
   @apply block w-full bg-white opacity-0;
   content: '';
@@ -23,7 +19,11 @@
 }
 
 .c-tab__button {
-  @apply pb-4;
+  @apply pb-4 text-xs text-indigo-100 leading-none uppercase tracking-wider;
+
+  @media screen(md) {
+    @apply text-sm;
+  }
 }
 
 .c-tab.active {

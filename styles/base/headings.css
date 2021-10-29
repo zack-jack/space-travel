@@ -46,4 +46,12 @@
       @apply text-lg;
     }
   }
+
+  .subheading {
+    @apply text-lg font-serif uppercase;
+  }
+
+  .subheading--alt {
+    @apply text-xs font-condensed tracking-wide uppercase;
+  }
 }

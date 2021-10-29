@@ -20,7 +20,7 @@ beforeEach(() => {
   }));
 });
 
-it('Mobile nav menu is hidden by default', async () => {
+test('Mobile nav menu is hidden by default', async () => {
   render(<HeaderMobile />);
 
   const navMenu = screen.queryByRole('menu');
@@ -28,7 +28,7 @@ it('Mobile nav menu is hidden by default', async () => {
   expect(navMenu).not.toBeInTheDocument();
 });
 
-it('Clicking the hamburger button expands the nav menu', async () => {
+test('Clicking the hamburger button expands the nav menu', async () => {
   render(<HeaderMobile />);
 
   const hamburgerBtn = screen.getByText('Menu');

@@ -1,9 +1,9 @@
 const useNavLinks = () => {
   const navLinks = [
     ['Home', '/'],
-    ['Destination', '#'],
-    ['Crew', '#'],
-    ['Technology', '#'],
+    ['Destination', '/destination'],
+    ['Crew', '/crew'],
+    ['Technology', '/technology'],
   ];
 
   return { navLinks };

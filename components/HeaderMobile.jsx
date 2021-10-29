@@ -44,7 +44,7 @@ const HeaderMobile = () => {
         <nav
           aria-hidden={!isMenuOpen}
           className={classNames(
-            'c-navbar__burger',
+            'c-navbar',
             { 'c-navbar--open': isMenuOpen, 'c-navbar--closed': !isMenuOpen },
           )}
         >

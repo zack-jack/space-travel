@@ -1,15 +1,19 @@
 .l-container {
   @apply flex flex-grow flex-col px-6 pb-12;
 
+  @media screen(md) {
+    @apply px-10 pb-16;
+  }
+
   @media screen(lg) {
     @apply px-40 pb-32;
   }
 }
 
 .l-col-2 {
-  @apply flex flex-grow flex-col items-center justify-between;
+  @apply flex flex-grow flex-col items-center;
 
   @media screen(lg) {
-    @apply flex-row;
+    @apply flex-row justify-between;
   }
 }

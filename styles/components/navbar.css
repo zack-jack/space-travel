@@ -90,6 +90,10 @@
   @apply opacity-100;
 }
 
+.c-navbar__link .c-numbered-title__title {
+  @apply ml-2;
+}
+
 .c-navbar__burger {
   @apply inline-block cursor-pointer z-50;
   transition-property: opacity, filter;

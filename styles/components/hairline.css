@@ -1,0 +1,3 @@
+.c-hairline {
+  @apply block w-full h-px bg-indigo-300;
+}

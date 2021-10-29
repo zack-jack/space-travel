@@ -1,0 +1,13 @@
+.page-destination {
+  @apply bg-cover bg-bottom;
+  background-image: url('../public/images/destination/bg-destination-mobile.jpg');
+
+  @media screen(md) {
+    @apply bg-center;
+    background-image: url('../public/images/destination/bg-destination-tablet.jpg');
+  }
+
+  @media screen(lg) {
+    background-image: url('../public/images/destination/bg-destination-desktop.jpg');
+  }
+}

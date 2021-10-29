@@ -126,12 +126,12 @@ const DesignSystem = () => {
                 <p className="text-indigo-100 mt-4">
                   Subheading 1 - Bellefair Regular - 28px
                 </p>
-                <p className="text-lg font-serif uppercase mt-3">384,400 km</p>
+                <p className="subheading mt-3">384,400 km</p>
                 <p className="text-indigo-100 mt-4">
                   Subheading 2 - Barlow Condensed Regular - 14px - 2.35
                   Character Space
                 </p>
-                <p className="text-xs font-condensed tracking-wide uppercase mt-3">
+                <p className="subheading--alt mt-3">
                   Avg. Distance
                 </p>
                 <p className="text-indigo-100 mt-4">
@@ -208,9 +208,9 @@ const DesignSystem = () => {
                     <Tabs
                       label="Design System Tabs"
                       tabs={[
-                        { title: 'Tab 1' },
-                        { title: 'Tab 2' },
-                        { title: 'Tab 3' },
+                        { name: 'Tab 1' },
+                        { name: 'Tab 2' },
+                        { name: 'Tab 3' },
                       ]}
                     />
                     <p className="text-indigo-100 text-center mt-4">Tabs</p>
