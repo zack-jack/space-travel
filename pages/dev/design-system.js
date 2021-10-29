@@ -175,8 +175,6 @@ const DesignSystem = () => {
               <div>
                 <nav className="c-navbar">
                   <ul
-                    id="mobile-navigation"
-                    aria-labelledby="mobile-menu-btn"
                     role="menu"
                     className="c-navbar__list"
                   >

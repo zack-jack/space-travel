@@ -18,12 +18,11 @@ const HeaderDesktop = () => {
             aria-hidden="true"
             className="c-header__logo order-first"
           />
+          <span className="sr-only">Home</span>
         </a>
       </Link>
       <nav className="c-navbar order-last">
         <ul
-          id="mobile-navigation"
-          aria-labelledby="mobile-menu-btn"
           role="menu"
           className="c-navbar__list"
         >

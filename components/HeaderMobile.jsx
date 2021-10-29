@@ -22,6 +22,7 @@ const HeaderMobile = () => {
             aria-hidden="true"
             className="c-header__logo"
           />
+          <span className="sr-only">Home</span>
         </a>
       </Link>
       <div ref={menuRef}>
