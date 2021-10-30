@@ -1,5 +1,5 @@
 .c-header {
-  @apply flex items-center justify-between mt-6 px-6;
+  @apply flex items-center justify-between mt-6 px-6 z-20;
 
   @media screen(md) {
     @apply flex items-center justify-between mt-0 p-0 pl-14;

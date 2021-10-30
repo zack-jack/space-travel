@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import NumberedTitle from './NumberedTitle';
 
 const NavbarLink = ({
-  href, index, title, active = false, numbered = true,
+  href, index, title, active = false, numbered = true, handleClick = () => {},
 }) => {
   const { pathname } = useRouter();
   const isActive = active || pathname === href;
@@ -15,6 +15,7 @@ const NavbarLink = ({
     <li
       role="none"
       className={classNames('c-navbar__list-item', { active: isActive })}
+      onClick={handleClick}
     >
       <Link href={href}>
         <a
@@ -39,6 +40,7 @@ const NavbarLink = ({
 NavbarLink.defaultProps = {
   active: false,
   numbered: true,
+  handleClick: () => {},
 };
 
 NavbarLink.propTypes = {
@@ -47,6 +49,7 @@ NavbarLink.propTypes = {
   title: PropTypes.string.isRequired,
   active: PropTypes.bool,
   numbered: PropTypes.bool,
+  handleClick: PropTypes.func,
 };
 
 export default NavbarLink;

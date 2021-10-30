@@ -1,9 +1,8 @@
 .c-navbar {
-  @apply absolute inset-0 left-1/4 bg-indigo-900 bg-opacity-90 text-white z-40;
-  transition: all 300ms ease-in-out;
+  @apply w-3/4 h-full bg-indigo-900 bg-opacity-90 text-white z-40;
 
   @media screen(md) {
-    @apply static z-auto;
+    @apply w-full z-auto;
   }
 }
 
@@ -11,14 +10,6 @@
   .c-navbar {
     @apply bg-white bg-opacity-10 backdrop-filter backdrop-blur-xl;
   }
-}
-
-.c-navbar--open {
-  @apply transform translate-x-0;
-}
-
-.c-navbar--closed {
-  @apply transform translate-x-full;
 }
 
 .c-navbar__list {
