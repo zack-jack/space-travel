@@ -10,11 +10,10 @@ const Tab = ({
     className={classNames('c-tab', { active: activeTab === index })}
   >
     <button
-      id={id}
       role="tab"
       type="button"
       aria-selected={activeTab === index}
-      aria-controls={id}
+      aria-controls={`${id}-tab`}
       className="c-tab__button"
       onClick={() => handleClick(index)}
     >

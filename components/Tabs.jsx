@@ -13,8 +13,8 @@ const Tabs = ({
   >
     {tabs.map(({ name }, i) => (
       <Tab
-        id={`${name.replace(' ', '-')}-${i}`}
-        key={`${name.replace(' ', '-')}`}
+        id={`${name.replace(' ', '-').toLowerCase()}`}
+        key={`${name.replace(' ', '-').toLowerCase()}`}
         index={i}
         handleClick={() => handleClick(i)}
         activeTab={activeTab}

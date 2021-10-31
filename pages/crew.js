@@ -36,16 +36,25 @@ const Crew = () => {
         <div className="flex flex-col flex-grow md:items-center lg:flex-row lg:justify-between lg:mt-16 lg:pb-24">
           <div className="flex flex-col flex-grow justify-between order-2 mt-8 md:flex-grow-0 md:order-1 md:w-9/12 md:mt-16 lg:w-1/2 lg:mt-0">
             <article className="flex flex-col flex-grow order-2 mt-8 text-center md:order-1 lg:justify-center lg:mt-0 lg:text-left">
-              <h2 className="text-sm opacity-50 md:text-lg lg:text-xl">{activeData.role}</h2>
-              <p className="mt-2 text-lg font-serif text-white uppercase leading-none md:text-2xl lg:mt-4">{activeData.name}</p>
-              <p className="mt-4 leading-8 lg:mt-7">{activeData.bio}</p>
+              <div
+                id={`${activeData.role.toLowerCase()}-tab`}
+                role="tabpanel"
+              >
+                <h2 className="text-sm opacity-50 md:text-lg lg:text-xl">{activeData.role}</h2>
+                <p className="mt-2 text-lg font-serif text-white uppercase leading-none md:text-2xl lg:mt-4">{activeData.name}</p>
+                <p className="mt-4 leading-8 lg:mt-7">{activeData.bio}</p>
+              </div>
             </article>
-            <div className="flex justify-center order-1 md:order-2 md:mt-10 lg:justify-start lg:mt-32">
+            <div
+              role="tablist"
+              className="flex justify-center order-1 md:order-2 md:mt-10 lg:justify-start lg:mt-32"
+            >
               {crew.map(({ role }, i) => (
                 <button
                   key={role}
                   type="button"
                   role="tab"
+                  aria-controls={`${role.toLowerCase()}-tab`}
                   aria-selected={i === activeSlide}
                   className={classNames(
                     'c-dot',

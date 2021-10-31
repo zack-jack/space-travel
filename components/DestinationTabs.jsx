@@ -46,7 +46,11 @@ const DestinationTabs = ({ className = '' }) => {
           tabs={destinations}
           handleClick={(i) => setActiveTab(i)}
         />
-        <div className="mt-5 md:mt-8 lg:mt-9">
+        <div
+          id={`${activeData.name.toLowerCase()}-tab`}
+          role="tabpanel"
+          className="mt-5 md:mt-8 lg:mt-9"
+        >
           <h2 className="text-2xl md:text-3xl">{activeData.name}</h2>
           <p className="mt-1 leading-8 md:mt-2 lg:mt-4">{activeData.description}</p>
           <div className="c-hairline mt-8 md:mt-12 lg:mt-14" />
