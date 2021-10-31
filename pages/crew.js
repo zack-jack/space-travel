@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import NumberedTitle from '../components/NumberedTitle';
 import SeoMeta from '../components/SeoMeta';
 import useCrew from '../hooks/useCrew';
-// import useDeviceDetect from '../hooks/useDeviceDetect';
 
 const Crew = () => {
   const meta = {
@@ -12,7 +11,6 @@ const Crew = () => {
   };
 
   const { crew } = useCrew();
-  // const { isMobile, isTablet } = useDeviceDetect();
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeData, setActiveData] = useState(crew[activeSlide]);
 
@@ -21,12 +19,6 @@ const Crew = () => {
 
     return () => {};
   }, [activeSlide]);
-
-  // const imgDimensions = () => {
-  //   if (isMobile) return 170;
-  //   if (isTablet) return 300;
-  //   return 445;
-  // };
 
   return (
     <>

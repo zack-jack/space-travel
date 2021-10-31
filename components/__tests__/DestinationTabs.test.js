@@ -2,14 +2,6 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import DestinationTabs from '../DestinationTabs';
 
-/* eslint-disable */
-jest.mock('next/image', () => ({
-  __esModule: true,
-  default: (props) =>
-    <img {...props} />,
-}));
-/* eslint-enable */
-
 test('Default tab has active state', () => {
   render(<DestinationTabs />);
 

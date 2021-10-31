@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
 import PropTypes from 'prop-types';
 import Tabs from './Tabs';
 import useDestinations from '../hooks/useDestinations';
@@ -26,12 +25,17 @@ const DestinationTabs = ({ className = '' }) => {
   return (
     <article className={className}>
       <div className="flex items-center justify-center lg:w-5/12">
-        <Image
-          alt={activeData.name}
-          src={`/images/destination/${activeData.images.webp}`}
-          width={imgDimensions()}
-          height={imgDimensions()}
-        />
+        <picture>
+          <source
+            srcSet={`/images/destination/${activeData.images.webp}`}
+            type="image/webp"
+          />
+          <img
+            alt={activeData.name}
+            src={`/images/destination/${activeData.images.png}`}
+            style={{ width: `${imgDimensions()}px`, aspectRatio: 1 }}
+          />
+        </picture>
       </div>
       <div
         className="flex flex-col items-center text-center mt-7 md:mt-14 md:px-14 lg:items-start lg:w-5/12 lg:text-left lg:mt-0 lg:px-0"
