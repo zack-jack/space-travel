@@ -38,7 +38,7 @@ const DestinationTabs = ({ className = '' }) => {
         </picture>
       </div>
       <div
-        className="flex flex-col items-center text-center mt-7 md:mt-14 md:px-14 lg:items-start lg:w-5/12 lg:text-left lg:mt-0 lg:px-0"
+        className="flex flex-col items-center text-center mt-7 md:mt-14 md:px-14 lg:items-start lg:w-6/12 lg:text-left lg:mt-0 lg:px-0"
       >
         <Tabs
           activeTab={activeTab}
