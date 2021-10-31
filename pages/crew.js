@@ -41,14 +41,14 @@ const Crew = () => {
             title="Meet Your Crew"
           />
         </h1>
-        <div className="flex flex-col flex-grow">
-          <div className="flex flex-col flex-grow justify-between order-2 w-7/12 pb-24">
-            <article className="flex flex-col flex-grow justify-center">
-              <h2 className="text-xl opacity-50">{activeData.role}</h2>
-              <p className="text-2xl font-serif text-white uppercase leading-none mt-4">{activeData.name}</p>
-              <p className="leading-8 mt-7">{activeData.bio}</p>
+        <div className="flex flex-col flex-grow md:items-center lg:flex-row lg:justify-between lg:mt-16 lg:pb-24">
+          <div className="flex flex-col flex-grow justify-between order-2 mt-8 md:flex-grow-0 md:order-1 md:w-9/12 md:mt-16 lg:w-1/2 lg:mt-0">
+            <article className="flex flex-col flex-grow order-2 mt-8 text-center md:order-1 lg:justify-center lg:mt-0 lg:text-left">
+              <h2 className="text-sm opacity-50 md:text-lg lg:text-xl">{activeData.role}</h2>
+              <p className="mt-2 text-lg font-serif text-white uppercase leading-none md:text-2xl lg:mt-4">{activeData.name}</p>
+              <p className="mt-4 leading-8 lg:mt-7">{activeData.bio}</p>
             </article>
-            <div>
+            <div className="flex justify-center order-1 md:order-2 md:mt-10 lg:justify-start lg:mt-32">
               {crew.map(({ role }, i) => (
                 <button
                   key={role}
@@ -69,16 +69,19 @@ const Crew = () => {
               ))}
             </div>
           </div>
-          <picture className="order-1 border-b border-solid border-indigo-300 -mb-20">
-            <source
-              srcSet={`/images/crew/${activeData.images.webp}`}
-              type="image/webp"
-            />
-            <img
-              src={`/images/crew/${activeData.images.png}`}
-              alt={activeData.name}
-            />
-          </picture>
+          <div className="flex justify-center items-end order-1 border-b border-solid border-indigo-300 mt-8 md:flex-grow md:order-2 md:w-1/2 md:mt-10 lg:w-4/12 lg:mt-0 lg:-mb-24 lg:ml-8">
+            <picture>
+              <source
+                srcSet={`/images/crew/${activeData.images.webp}`}
+                type="image/webp"
+              />
+              <img
+                src={`/images/crew/${activeData.images.png}`}
+                alt={activeData.name}
+                className="w-auto h-56 md:h-auto"
+              />
+            </picture>
+          </div>
         </div>
       </div>
     </>
