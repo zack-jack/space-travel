@@ -24,7 +24,7 @@ const Crew = () => {
     <>
       <SeoMeta meta={meta} />
 
-      <div className="l-container pb-0 md:pt-10 lg:pt-20">
+      <div className="l-container pb-0">
         <h1
           className="text-center md:text-left"
         >

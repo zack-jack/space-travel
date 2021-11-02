@@ -1,0 +1,13 @@
+.page-technology {
+  @apply bg-cover bg-bottom;
+  background-image: url('../public/images/technology/bg-technology-mobile.jpg');
+
+  @media screen(md) {
+    @apply bg-center;
+    background-image: url('../public/images/technology/bg-technology-tablet.jpg');
+  }
+
+  @media screen(lg) {
+    background-image: url('../public/images/technology/bg-technology-desktop.jpg');
+  }
+}

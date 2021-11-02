@@ -1,8 +1,16 @@
 .c-numbered-dot {
-  @apply border border-solid border-white rounded-full font-serif text-xl text-white border-opacity-25;
+  @apply w-10 border border-solid border-white rounded-full font-serif text-sm text-white border-opacity-25;
   aspect-ratio: 1;
-  width: 80px;
   transition: all 200ms ease-in-out;
+
+  @media screen(md) {
+    @apply text-lg;
+    width: 60px;
+  }
+
+  @media screen(lg) {
+    @apply w-20 text-xl;
+  }
 }
 
 .c-numbered-dot:hover,

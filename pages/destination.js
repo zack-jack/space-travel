@@ -13,7 +13,7 @@ const Destination = () => {
     <>
       <SeoMeta meta={meta} />
 
-      <div className="l-container md:pt-10 lg:pt-20">
+      <div className="l-container">
         <h1
           className="text-center md:text-left"
         >

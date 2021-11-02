@@ -9,7 +9,7 @@ const Tabs = ({
   <ul
     role="tablist"
     aria-label={label}
-    className={classNames('c-tabs', { className })}
+    className={classNames('c-tabs', className)}
   >
     {tabs.map(({ name }, i) => (
       <Tab
